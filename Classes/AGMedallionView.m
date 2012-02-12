@@ -1,15 +1,16 @@
 //
 //  AGMedallionView.m
-//  Photojog
+//  AGMedallionView
 //
 //  Created by Artur Grigor on 1/23/12.
-//  Copyright (c) 2012 Universitatea "Babes-Bolyai". All rights reserved.
+//  Copyright (c) 2012 Artur Grigor. All rights reserved.
 //
 
 #import "AGMedallionView.h"
 
 @interface AGMedallionView (Private)
 
+- (void)setup;
 - (void)touchUpInsideControl:(id)sender;
 
 @end
@@ -18,7 +19,7 @@
 
 #pragma mark - Properties
 
-@synthesize image, borderColor, borderWidth, dropShadowColor, dropShadowOffset, dropShadowBlur, delegate;
+@synthesize image, borderColor, borderWidth, shadowColor, shadowOffset, shadowBlur, delegate;
 
 - (void)setImage:(UIImage *)aImage
 {
@@ -49,30 +50,30 @@
     }
 }
 
-- (void)setDropShadowColor:(UIColor *)aDropShadowColor
+- (void)setShadowColor:(UIColor *)aShadowColor
 {
-    if (dropShadowColor != aDropShadowColor) {
-        [dropShadowColor release];
-        dropShadowColor = [aDropShadowColor retain];
+    if (shadowColor != aShadowColor) {
+        [shadowColor release];
+        shadowColor = [aShadowColor retain];
         
         [self setNeedsDisplay];
     }
 }
 
-- (void)setDropShadowOffset:(CGSize)aDropShadowOffset
+- (void)setShadowOffset:(CGSize)aShadowOffset
 {
-    if (!CGSizeEqualToSize(dropShadowOffset, aDropShadowOffset)) {
-        dropShadowOffset.width = aDropShadowOffset.width;
-        dropShadowOffset.height = aDropShadowOffset.height;
+    if (!CGSizeEqualToSize(shadowOffset, aShadowOffset)) {
+        shadowOffset.width = aShadowOffset.width;
+        shadowOffset.height = aShadowOffset.height;
         
         [self setNeedsDisplay];
     }
 }
 
-- (void)setDropShadowBlur:(CGFloat)aDropShadowBlur
+- (void)setShadowBlur:(CGFloat)aShadowBlur
 {
-    if (dropShadowBlur != aDropShadowBlur) {
-        dropShadowBlur = aDropShadowBlur;
+    if (shadowBlur != aShadowBlur) {
+        shadowBlur = aShadowBlur;
         
         [self setNeedsDisplay];
     }
@@ -92,7 +93,7 @@
 {
     [image release];
     [borderColor release];
-    [dropShadowColor release];
+    [shadowColor release];
     [touchableControl release];
     
     // Release the alpha gradient
@@ -101,24 +102,51 @@
     [super dealloc];
 }
 
+- (void)setup
+{
+    alphaGradient = NULL;
+    
+    self.borderColor = [UIColor whiteColor];
+    self.borderWidth = 5.f;
+    self.shadowColor = [UIColor colorWithRed:0.25f green:0.25f blue:0.25f alpha:.75f];
+    self.shadowOffset = CGSizeMake(0, 0);
+    self.shadowBlur = 2.f;
+    self.backgroundColor = [UIColor clearColor];
+    
+    // Place a touchable control on top of everything
+    touchableControl = [[UIControl alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    [touchableControl addTarget:self action:@selector(touchUpInsideControl:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:touchableControl];
+}
+
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        [self setup];
+    }
+    
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        [self setup];
+    }
+    
+    return self;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self)
     {
-        alphaGradient = NULL;
-        
-        self.borderColor = [UIColor whiteColor];
-        self.borderWidth = 4.f;
-        self.dropShadowColor = [UIColor colorWithRed:0.25f green:0.25f blue:0.25f alpha:.75f];
-        self.dropShadowOffset = CGSizeMake(0, 1);
-        self.dropShadowBlur = 1.f;
-        self.backgroundColor = [UIColor clearColor];
-        
-        // Place a touchable control on top of everything
-        touchableControl = [[UIControl alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-        [touchableControl addTarget:self action:@selector(touchUpInsideControl:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:touchableControl];
+        [self setup];
     }
     
     return self;
@@ -142,8 +170,8 @@
 - (void)drawRect:(CGRect)rect
 {
     // Image rect
-    CGRect imageRect = CGRectMake(self.borderWidth, 
-                                  self.borderWidth, 
+    CGRect imageRect = CGRectMake((self.borderWidth), 
+                                  (self.borderWidth) , 
                                   rect.size.width - (self.borderWidth * 2), 
                                   rect.size.height - (self.borderWidth * 2));
     
@@ -198,34 +226,35 @@
     CGContextTranslateCTM(contextRef, 0, rect.size.height);
     CGContextScaleCTM(contextRef, 1.0, -1.0);
     
-    // Drop shadow
-    CGContextSetShadowWithColor(contextRef, 
-                                self.dropShadowOffset, 
-                                self.dropShadowBlur, 
-                                self.dropShadowColor.CGColor);
+    CGContextSaveGState(contextRef);
+    
     // Draw image
     CGContextDrawImage(contextRef, rect, imageRef);
+    
+    CGContextRestoreGState(contextRef);
     CGContextSaveGState(contextRef);
     
     // Clip to shine's mask
     CGContextClipToMask(contextRef, self.bounds, mainMaskImageRef);
     CGContextClipToMask(contextRef, self.bounds, shineMaskImageRef);
-//    CGContextSetBlendMode(contextRef, kCGBlendModeLighten);
+    CGContextSetBlendMode(contextRef, kCGBlendModeLighten);
     CGContextDrawLinearGradient(contextRef, [self alphaGradient], CGPointMake(0, 0), CGPointMake(0, self.bounds.size.height), 0);
-    CGContextRestoreGState(contextRef);
     
     CGImageRelease(mainMaskImageRef);
     CGImageRelease(shineMaskImageRef);
     // Done with image
+
+    CGContextRestoreGState(contextRef);
     
     CGContextSetLineWidth(contextRef, self.borderWidth);
     CGContextSetStrokeColorWithColor(contextRef, self.borderColor.CGColor);
     CGContextMoveToPoint(contextRef, 0, 0);
-    CGContextAddEllipseInRect(contextRef, CGRectMake(self.borderWidth / 2, 
-                                                     self.borderWidth / 2, 
-                                                     rect.size.width - self.borderWidth, 
-                                                     rect.size.height - self.borderWidth));
-    
+    CGContextAddEllipseInRect(contextRef, imageRect);
+    // Drop shadow
+    CGContextSetShadowWithColor(contextRef, 
+                                self.shadowOffset, 
+                                self.shadowBlur, 
+                                self.shadowColor.CGColor);
     CGContextStrokePath(contextRef);
     CGContextRestoreGState(contextRef);
 }

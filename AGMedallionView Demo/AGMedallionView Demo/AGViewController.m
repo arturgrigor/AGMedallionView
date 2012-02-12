@@ -3,7 +3,7 @@
 //  AGMedallionView Demo
 //
 //  Created by Artur Grigor on 2/12/12.
-//  Copyright (c) 2012 Universitatea "Babes-Bolyai". All rights reserved.
+//  Copyright (c) 2012 Artur Grigor. All rights reserved.
 //
 
 #import "AGViewController.h"
@@ -37,9 +37,6 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     self.medallionView.image = [UIImage imageNamed:@"sample.png"];
-    self.medallionView.borderColor = [UIColor blackColor];
-    self.medallionView.borderWidth = 6.f;
-    self.medallionView.dropShadowColor = [UIColor redColor];
 }
 
 - (void)viewDidUnload

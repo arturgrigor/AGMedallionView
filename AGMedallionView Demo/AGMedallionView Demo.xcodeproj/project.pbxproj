@@ -148,7 +148,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
-				ORGANIZATIONNAME = "Universitatea \"Babes-Bolyai\"";
+				ORGANIZATIONNAME = "Artur Grigor";
 			};
 			buildConfigurationList = FE8B044014E83145007F6625 /* Build configuration list for PBXProject "AGMedallionView Demo" */;
 			compatibilityVersion = "Xcode 3.2";

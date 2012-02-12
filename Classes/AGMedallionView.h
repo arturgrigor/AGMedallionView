@@ -1,9 +1,9 @@
 //
 //  AGMedallionView.h
-//  Photojog
+//  AGMedallionView
 //
 //  Created by Artur Grigor on 1/23/12.
-//  Copyright (c) 2012 Universitatea "Babes-Bolyai". All rights reserved.
+//  Copyright (c) 2012 Artur Grigor. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -22,9 +22,9 @@
     UIImage *image;
     UIColor *borderColor;
     CGFloat borderWidth;
-    UIColor *dropShadowColor;
-    CGSize dropShadowOffset;
-    CGFloat dropShadowBlur;
+    UIColor *shadowColor;
+    CGSize shadowOffset;
+    CGFloat shadowBlur;
     
     id<AGMedallionViewDelegate> delegate;
     
@@ -38,8 +38,8 @@
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) UIColor *borderColor;
 @property (nonatomic, assign) CGFloat borderWidth;
-@property (nonatomic, retain) UIColor *dropShadowColor;
-@property (nonatomic, assign) CGSize dropShadowOffset;
-@property (nonatomic, assign) CGFloat dropShadowBlur;
+@property (nonatomic, retain) UIColor *shadowColor;
+@property (nonatomic, assign) CGSize shadowOffset;
+@property (nonatomic, assign) CGFloat shadowBlur;
 
 @end
