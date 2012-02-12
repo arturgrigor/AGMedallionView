@@ -10,8 +10,9 @@
 
 @class AGMedallionView;
 
-@protocol AGMedallionViewDelegate <NSObject>
+@protocol AGMedallionViewDelegate<NSObject>
 
+@optional
 - (void)didTouchMedallionView:(AGMedallionView *)medallionView;
 
 @end
@@ -19,14 +20,26 @@
 @interface AGMedallionView : UIView
 {
     UIImage *image;
-    UIControl *touchableControl;
-
-    CGGradientRef _alphaGradient;
+    UIColor *borderColor;
+    CGFloat borderWidth;
+    UIColor *dropShadowColor;
+    CGSize dropShadowOffset;
+    CGFloat dropShadowBlur;
     
     id<AGMedallionViewDelegate> delegate;
+    
+    // Private
+    UIControl *touchableControl;
+    CGGradientRef alphaGradient;
 }
 
 @property (nonatomic, assign) id<AGMedallionViewDelegate> delegate;
+
 @property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIColor *borderColor;
+@property (nonatomic, assign) CGFloat borderWidth;
+@property (nonatomic, retain) UIColor *dropShadowColor;
+@property (nonatomic, assign) CGSize dropShadowOffset;
+@property (nonatomic, assign) CGFloat dropShadowBlur;
 
 @end

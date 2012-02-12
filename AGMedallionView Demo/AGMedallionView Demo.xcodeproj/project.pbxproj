@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FE7FA03714E834C800B31FD8 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7FA03614E834C800B31FD8 /* sample.png */; };
+		FE7FA03C14E83BC300B31FD8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7FA03B14E83BC300B31FD8 /* icon.png */; };
+		FE7FA03E14E83BDF00B31FD8 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7FA03D14E83BDF00B31FD8 /* icon@2x.png */; };
 		FE8B044B14E83146007F6625 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8B044A14E83146007F6625 /* UIKit.framework */; };
 		FE8B044D14E83146007F6625 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8B044C14E83146007F6625 /* Foundation.framework */; };
 		FE8B044F14E83146007F6625 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8B044E14E83146007F6625 /* CoreGraphics.framework */; };
@@ -17,11 +19,12 @@
 		FE8B045E14E83146007F6625 /* AGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8B045D14E83146007F6625 /* AGViewController.m */; };
 		FE8B046114E83146007F6625 /* AGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8B045F14E83146007F6625 /* AGViewController.xib */; };
 		FE8B046B14E83176007F6625 /* AGMedallionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8B046914E83176007F6625 /* AGMedallionView.m */; };
-		FE8B046C14E83176007F6625 /* medallionShineMask.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8B046A14E83176007F6625 /* medallionShineMask.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FE7FA03614E834C800B31FD8 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
+		FE7FA03B14E83BC300B31FD8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		FE7FA03D14E83BDF00B31FD8 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		FE8B044614E83146007F6625 /* AGMedallionView Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AGMedallionView Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8B044A14E83146007F6625 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FE8B044C14E83146007F6625 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -37,7 +40,6 @@
 		FE8B046014E83146007F6625 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AGViewController.xib; sourceTree = "<group>"; };
 		FE8B046814E83176007F6625 /* AGMedallionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGMedallionView.h; sourceTree = "<group>"; };
 		FE8B046914E83176007F6625 /* AGMedallionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGMedallionView.m; sourceTree = "<group>"; };
-		FE8B046A14E83176007F6625 /* medallionShineMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medallionShineMask.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,8 @@
 		FE8B045114E83146007F6625 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE7FA03D14E83BDF00B31FD8 /* icon@2x.png */,
+				FE7FA03B14E83BC300B31FD8 /* icon.png */,
 				FE8B045214E83146007F6625 /* AGMedallionView Demo-Info.plist */,
 				FE8B045314E83146007F6625 /* InfoPlist.strings */,
 				FE8B045614E83146007F6625 /* main.m */,
@@ -112,7 +116,6 @@
 				FE7FA03614E834C800B31FD8 /* sample.png */,
 				FE8B046814E83176007F6625 /* AGMedallionView.h */,
 				FE8B046914E83176007F6625 /* AGMedallionView.m */,
-				FE8B046A14E83176007F6625 /* medallionShineMask.png */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -171,8 +174,9 @@
 			files = (
 				FE8B045514E83146007F6625 /* InfoPlist.strings in Resources */,
 				FE8B046114E83146007F6625 /* AGViewController.xib in Resources */,
-				FE8B046C14E83176007F6625 /* medallionShineMask.png in Resources */,
 				FE7FA03714E834C800B31FD8 /* sample.png in Resources */,
+				FE7FA03C14E83BC300B31FD8 /* icon.png in Resources */,
+				FE7FA03E14E83BDF00B31FD8 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

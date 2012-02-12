@@ -37,6 +37,9 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     self.medallionView.image = [UIImage imageNamed:@"sample.png"];
+    self.medallionView.borderColor = [UIColor blackColor];
+    self.medallionView.borderWidth = 6.f;
+    self.medallionView.dropShadowColor = [UIColor redColor];
 }
 
 - (void)viewDidUnload
