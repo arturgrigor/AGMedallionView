@@ -36,7 +36,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.medallionView.image = [UIImage imageNamed:@"sample.png"];
+    self.medallionView.image = [UIImage imageNamed:@"sample"];
 }
 
 - (void)viewDidUnload
