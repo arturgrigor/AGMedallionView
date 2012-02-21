@@ -21,16 +21,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class AGMedallionView;
-
-@protocol AGMedallionViewDelegate<NSObject>
-
-@optional
-- (void)didTouchMedallionView:(AGMedallionView *)medallionView;
-
-@end
-
-@interface AGMedallionView : UIView
+@interface AGMedallionView : UIControl
 {
     UIImage *image;
     UIColor *borderColor;
@@ -39,14 +30,10 @@
     CGSize shadowOffset;
     CGFloat shadowBlur;
     
-    id<AGMedallionViewDelegate> delegate;
-    
     // Private
     UIControl *touchableControl;
     CGGradientRef alphaGradient;
 }
-
-@property (nonatomic, assign) id<AGMedallionViewDelegate> delegate;
 
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) UIColor *borderColor;

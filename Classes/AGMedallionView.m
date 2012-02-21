@@ -24,7 +24,6 @@
 @interface AGMedallionView (Private)
 
 - (void)setup;
-- (void)touchUpInsideControl:(id)sender;
 
 @end
 
@@ -32,7 +31,7 @@
 
 #pragma mark - Properties
 
-@synthesize image, borderColor, borderWidth, shadowColor, shadowOffset, shadowBlur, delegate;
+@synthesize image, borderColor, borderWidth, shadowColor, shadowOffset, shadowBlur;
 
 - (void)setImage:(UIImage *)aImage
 {
@@ -92,14 +91,6 @@
     }
 }
 
-#pragma mark - Private
-
-- (void)touchUpInsideControl:(id)sender
-{
-    if ([self.delegate respondsToSelector:@selector(didTouchMedallionView:)])
-        [self.delegate didTouchMedallionView:self];
-}
-
 #pragma mark - Object Lifecycle
 
 - (void)dealloc
@@ -125,22 +116,11 @@
     self.shadowOffset = CGSizeMake(0, 0);
     self.shadowBlur = 2.f;
     self.backgroundColor = [UIColor clearColor];
-    
-    // Place a touchable control on top of everything
-    touchableControl = [[UIControl alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-    [touchableControl addTarget:self action:@selector(touchUpInsideControl:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:touchableControl];
 }
 
 - (id)init
 {
-    self = [self initWithFrame:CGRectMake(0, 0, 128.f, 128.f)];
-    if (self)
-    {
-        
-    }
-    
-    return self;
+    return [self initWithFrame:CGRectMake(0, 0, 128.f, 128.f)];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder

@@ -8,6 +8,12 @@
 
 #import "AGViewController.h"
 
+@interface AGViewController ()
+
+- (void)medallionDidTap:(id)sender;
+
+@end
+
 @implementation AGViewController
 
 #pragma mark - Properties
@@ -37,6 +43,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     self.medallionView.image = [UIImage imageNamed:@"sample"];
+    [self.medallionView addTarget:self action:@selector(medallionDidTap:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewDidUnload
@@ -70,6 +77,15 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+#pragma mark - Private
+
+- (void)medallionDidTap:(id)sender
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Tap" message:@"Medallion has been tapped." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
+    [alertView release];
 }
 
 @end
