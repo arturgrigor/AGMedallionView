@@ -262,6 +262,7 @@
 		FE8B046514E83146007F6625 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AGMedallionView Demo/AGMedallionView Demo-Prefix.pch";
 				INFOPLIST_FILE = "AGMedallionView Demo/AGMedallionView Demo-Info.plist";
@@ -273,6 +274,7 @@
 		FE8B046614E83146007F6625 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AGMedallionView Demo/AGMedallionView Demo-Prefix.pch";
 				INFOPLIST_FILE = "AGMedallionView Demo/AGMedallionView Demo-Info.plist";
