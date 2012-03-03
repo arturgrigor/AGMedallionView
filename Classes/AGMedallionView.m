@@ -235,6 +235,7 @@
     
     CGImageRelease(mainMaskImageRef);
     CGImageRelease(shineMaskImageRef);
+    CGImageRelease(imageRef);
     // Done with image
 
     CGContextRestoreGState(contextRef);
