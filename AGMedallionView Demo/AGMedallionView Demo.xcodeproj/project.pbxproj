@@ -7,24 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE7FA03714E834C800B31FD8 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7FA03614E834C800B31FD8 /* sample.png */; };
 		FE7FA03C14E83BC300B31FD8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7FA03B14E83BC300B31FD8 /* icon.png */; };
 		FE7FA03E14E83BDF00B31FD8 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7FA03D14E83BDF00B31FD8 /* icon@2x.png */; };
+		FE89CAD516C3B0D10084BE0B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE89CAD416C3B0D10084BE0B /* Default-568h@2x.png */; };
+		FE89CADA16C3B3790084BE0B /* AGMedallionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE89CAD916C3B3790084BE0B /* AGMedallionView.m */; };
+		FE89CADC16C3B3900084BE0B /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = FE89CADB16C3B3900084BE0B /* sample.png */; };
 		FE8B044B14E83146007F6625 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8B044A14E83146007F6625 /* UIKit.framework */; };
 		FE8B044D14E83146007F6625 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8B044C14E83146007F6625 /* Foundation.framework */; };
-		FE8B044F14E83146007F6625 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8B044E14E83146007F6625 /* CoreGraphics.framework */; };
 		FE8B045514E83146007F6625 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE8B045314E83146007F6625 /* InfoPlist.strings */; };
 		FE8B045714E83146007F6625 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8B045614E83146007F6625 /* main.m */; };
 		FE8B045B14E83146007F6625 /* AGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8B045A14E83146007F6625 /* AGAppDelegate.m */; };
 		FE8B045E14E83146007F6625 /* AGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8B045D14E83146007F6625 /* AGViewController.m */; };
 		FE8B046114E83146007F6625 /* AGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8B045F14E83146007F6625 /* AGViewController.xib */; };
-		FE8B046B14E83176007F6625 /* AGMedallionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8B046914E83176007F6625 /* AGMedallionView.m */; };
+		FEBFD17316C3DAA600B35FF4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8B044E14E83146007F6625 /* CoreGraphics.framework */; };
+		FEBFD17516C3DB7600B35FF4 /* AGMedallionView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FEBFD17416C3DB7600B35FF4 /* AGMedallionView.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FE7FA03614E834C800B31FD8 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
 		FE7FA03B14E83BC300B31FD8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		FE7FA03D14E83BDF00B31FD8 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
+		FE89CAD416C3B0D10084BE0B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		FE89CAD816C3B3790084BE0B /* AGMedallionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGMedallionView.h; sourceTree = "<group>"; };
+		FE89CAD916C3B3790084BE0B /* AGMedallionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGMedallionView.m; sourceTree = "<group>"; };
+		FE89CADB16C3B3900084BE0B /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
 		FE8B044614E83146007F6625 /* AGMedallionView Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AGMedallionView Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8B044A14E83146007F6625 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FE8B044C14E83146007F6625 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -38,8 +43,7 @@
 		FE8B045C14E83146007F6625 /* AGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGViewController.h; sourceTree = "<group>"; };
 		FE8B045D14E83146007F6625 /* AGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGViewController.m; sourceTree = "<group>"; };
 		FE8B046014E83146007F6625 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AGViewController.xib; sourceTree = "<group>"; };
-		FE8B046814E83176007F6625 /* AGMedallionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGMedallionView.h; sourceTree = "<group>"; };
-		FE8B046914E83176007F6625 /* AGMedallionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGMedallionView.m; sourceTree = "<group>"; };
+		FEBFD17416C3DB7600B35FF4 /* AGMedallionView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AGMedallionView.podspec; path = ../AGMedallionView.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,19 +51,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEBFD17316C3DAA600B35FF4 /* CoreGraphics.framework in Frameworks */,
 				FE8B044B14E83146007F6625 /* UIKit.framework in Frameworks */,
 				FE8B044D14E83146007F6625 /* Foundation.framework in Frameworks */,
-				FE8B044F14E83146007F6625 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE89CAD716C3B3790084BE0B /* AGMedallionView */ = {
+			isa = PBXGroup;
+			children = (
+				FE89CAD816C3B3790084BE0B /* AGMedallionView.h */,
+				FE89CAD916C3B3790084BE0B /* AGMedallionView.m */,
+			);
+			name = AGMedallionView;
+			path = ../AGMedallionView;
+			sourceTree = "<group>";
+		};
 		FE8B043B14E83145007F6625 = {
 			isa = PBXGroup;
 			children = (
-				FE8B046714E83176007F6625 /* Classes */,
+				FEBFD17416C3DB7600B35FF4 /* AGMedallionView.podspec */,
+				FE89CAD716C3B3790084BE0B /* AGMedallionView */,
 				FE8B045014E83146007F6625 /* AGMedallionView Demo */,
 				FE8B044914E83146007F6625 /* Frameworks */,
 				FE8B044714E83146007F6625 /* Products */,
@@ -100,6 +115,8 @@
 		FE8B045114E83146007F6625 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE89CAD416C3B0D10084BE0B /* Default-568h@2x.png */,
+				FE89CADB16C3B3900084BE0B /* sample.png */,
 				FE7FA03D14E83BDF00B31FD8 /* icon@2x.png */,
 				FE7FA03B14E83BC300B31FD8 /* icon.png */,
 				FE8B045214E83146007F6625 /* AGMedallionView Demo-Info.plist */,
@@ -108,17 +125,6 @@
 				FE8B045814E83146007F6625 /* AGMedallionView Demo-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FE8B046714E83176007F6625 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				FE7FA03614E834C800B31FD8 /* sample.png */,
-				FE8B046814E83176007F6625 /* AGMedallionView.h */,
-				FE8B046914E83176007F6625 /* AGMedallionView.m */,
-			);
-			name = Classes;
-			path = ../Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +153,7 @@
 		FE8B043D14E83145007F6625 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = AG;
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Artur Grigor";
 			};
@@ -174,9 +181,11 @@
 			files = (
 				FE8B045514E83146007F6625 /* InfoPlist.strings in Resources */,
 				FE8B046114E83146007F6625 /* AGViewController.xib in Resources */,
-				FE7FA03714E834C800B31FD8 /* sample.png in Resources */,
 				FE7FA03C14E83BC300B31FD8 /* icon.png in Resources */,
 				FE7FA03E14E83BDF00B31FD8 /* icon@2x.png in Resources */,
+				FE89CAD516C3B0D10084BE0B /* Default-568h@2x.png in Resources */,
+				FE89CADC16C3B3900084BE0B /* sample.png in Resources */,
+				FEBFD17516C3DB7600B35FF4 /* AGMedallionView.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +199,7 @@
 				FE8B045714E83146007F6625 /* main.m in Sources */,
 				FE8B045B14E83146007F6625 /* AGAppDelegate.m in Sources */,
 				FE8B045E14E83146007F6625 /* AGViewController.m in Sources */,
-				FE8B046B14E83176007F6625 /* AGMedallionView.m in Sources */,
+				FE89CADA16C3B3790084BE0B /* AGMedallionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +230,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -245,7 +255,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -262,11 +273,14 @@
 		FE8B046514E83146007F6625 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AGMedallionView Demo/AGMedallionView Demo-Prefix.pch";
 				INFOPLIST_FILE = "AGMedallionView Demo/AGMedallionView Demo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -274,11 +288,14 @@
 		FE8B046614E83146007F6625 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AGMedallionView Demo/AGMedallionView Demo-Prefix.pch";
 				INFOPLIST_FILE = "AGMedallionView Demo/AGMedallionView Demo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

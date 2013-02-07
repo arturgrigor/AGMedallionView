@@ -3,7 +3,7 @@
 //  AGMedallionView Demo
 //
 //  Created by Artur Grigor on 2/12/12.
-//  Copyright (c) 2012 Artur Grigor. All rights reserved.
+//  Copyright (c) 2012 - 2013 Artur Grigor. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -15,6 +15,6 @@
     AGMedallionView *medallionView;
 }
 
-@property (nonatomic, retain) IBOutlet AGMedallionView *medallionView;
+@property (nonatomic, strong) IBOutlet AGMedallionView *medallionView;
 
 @end

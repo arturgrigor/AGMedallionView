@@ -3,25 +3,18 @@
 //  AGMedallionView
 //
 //  Created by Artur Grigor on 1/23/12.
-//  Copyright (c) 2012 Artur Grigor. All rights reserved.
-//  
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//  
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//  
-//  You should have received a copy of the GNU General Public License
-//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//  Copyright (c) 2012 - 2013 Artur Grigor. All rights reserved.
+//
+//  For the full copyright and license information, please view the LICENSE
+//  file that was distributed with this source code.
 //
 
 #import "AGMedallionView.h"
 
-@interface AGMedallionView (Private)
+@interface AGMedallionView ()
+{
+    CGGradientRef _alphaGradient;
+}
 
 - (void)setup;
 
@@ -31,84 +24,85 @@
 
 #pragma mark - Properties
 
-@synthesize image, borderColor, borderWidth, shadowColor, shadowOffset, shadowBlur;
+@synthesize
+    image = _image,
+    borderColor = _borderColor,
+    borderWidth = _borderWidth,
+    shadowColor = _shadowColor,
+    shadowOffset = _shadowOffset,
+    shadowBlur = _shadowBlur;
 
-- (void)setImage:(UIImage *)aImage
+- (void)setImage:(UIImage *)image
 {
-    if (image != aImage) {
-        [image release];
-        image = [aImage retain];
+    _image = image;
+    
+    [self setNeedsDisplay];
+}
+
+- (void)setBorderColor:(UIColor *)borderColor
+{
+    _borderColor = borderColor;
+    
+    [self setNeedsDisplay];
+}
+
+- (void)setBorderWidth:(CGFloat)borderWidth
+{
+    _borderWidth = borderWidth;
+    
+    [self setNeedsDisplay];
+}
+
+- (void)setShadowColor:(UIColor *)shadowColor
+{
+    _shadowColor = shadowColor;
+    
+    [self setNeedsDisplay];
+}
+
+- (void)setShadowOffset:(CGSize)shadowOffset
+{
+    if (! CGSizeEqualToSize(_shadowOffset, shadowOffset)) {
+        _shadowOffset.width = shadowOffset.width;
+        _shadowOffset.height = shadowOffset.height;
         
         [self setNeedsDisplay];
     }
 }
 
-- (void)setBorderColor:(UIColor *)aBorderColor
+- (void)setShadowBlur:(CGFloat)shadowBlur
 {
-    if (borderColor != aBorderColor) {
-        [borderColor release];
-        borderColor = [aBorderColor retain];
+    if (_shadowBlur != shadowBlur) {
+        _shadowBlur = shadowBlur;
         
         [self setNeedsDisplay];
     }
 }
 
-- (void)setBorderWidth:(CGFloat)aBorderWidth
+- (CGGradientRef)alphaGradient
 {
-    if (borderWidth != aBorderWidth) {
-        borderWidth = aBorderWidth;
-        
-        [self setNeedsDisplay];
+    if (NULL == _alphaGradient) {
+        CGFloat colors[6] = {1.f, 0.75f, 1.f, 0.f, 0.f, 0.f};
+        CGFloat colorStops[3] = {1.f, 0.35f, 0.f};
+        CGColorSpaceRef grayColorSpace = CGColorSpaceCreateDeviceGray();
+        _alphaGradient = CGGradientCreateWithColorComponents(grayColorSpace, colors, colorStops, 3);
+        CGColorSpaceRelease(grayColorSpace);
     }
-}
-
-- (void)setShadowColor:(UIColor *)aShadowColor
-{
-    if (shadowColor != aShadowColor) {
-        [shadowColor release];
-        shadowColor = [aShadowColor retain];
-        
-        [self setNeedsDisplay];
-    }
-}
-
-- (void)setShadowOffset:(CGSize)aShadowOffset
-{
-    if (!CGSizeEqualToSize(shadowOffset, aShadowOffset)) {
-        shadowOffset.width = aShadowOffset.width;
-        shadowOffset.height = aShadowOffset.height;
-        
-        [self setNeedsDisplay];
-    }
-}
-
-- (void)setShadowBlur:(CGFloat)aShadowBlur
-{
-    if (shadowBlur != aShadowBlur) {
-        shadowBlur = aShadowBlur;
-        
-        [self setNeedsDisplay];
-    }
+    
+    return _alphaGradient;
 }
 
 #pragma mark - Object Lifecycle
 
 - (void)dealloc
 {
-    [image release];
-    [borderColor release];
-    [shadowColor release];
-    [touchableControl release];
-    
     // Release the alpha gradient
-    CGGradientRelease(alphaGradient);
-    
-    [super dealloc];
+    CGGradientRelease(_alphaGradient);
 }
 
 - (void)setup
 {
-    alphaGradient = NULL;
+    _alphaGradient = NULL;
     
     self.borderColor = [UIColor whiteColor];
     self.borderWidth = 5.f;
@@ -146,19 +140,6 @@
 }
 
 #pragma mark - Drawing
-
-- (CGGradientRef)alphaGradient
-{
-    if (NULL == alphaGradient) {
-        CGFloat colors[6] = {1.f, 0.75f, 1.f, 0.f, 0.f, 0.f};
-        CGFloat colorStops[3] = {1.f, 0.35f, 0.f};
-        CGColorSpaceRef grayColorSpace = CGColorSpaceCreateDeviceGray();
-        alphaGradient = CGGradientCreateWithColorComponents(grayColorSpace, colors, colorStops, 3);
-        CGColorSpaceRelease(grayColorSpace);
-    }
-    
-    return alphaGradient;
-}
 
 - (void)drawRect:(CGRect)rect
 {

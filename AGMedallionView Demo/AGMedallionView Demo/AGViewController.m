@@ -3,7 +3,7 @@
 //  AGMedallionView Demo
 //
 //  Created by Artur Grigor on 2/12/12.
-//  Copyright (c) 2012 Artur Grigor. All rights reserved.
+//  Copyright (c) 2012 - 2013 Artur Grigor. All rights reserved.
 //
 
 #import "AGViewController.h"
@@ -22,13 +22,6 @@
 
 #pragma mark - Object Lifecycle
 
-- (void)dealloc
-{
-    [medallionView release];
-    
-    [super dealloc];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -42,8 +35,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+//    [[AGMedallionView appearance] setBorderColor:[UIColor yellowColor]];
+//    [[AGMedallionView appearance] setBorderWidth:4.f];
+//    [[AGMedallionView appearance] setShadowColor:[UIColor redColor]];
+//    [[AGMedallionView appearance] setShadowOffset:CGSizeMake(0, 0)];
+//    [[AGMedallionView appearance] setShadowBlur:2.f];
+    
     self.medallionView.image = [UIImage imageNamed:@"sample"];
-    [self.medallionView addTarget:self action:@selector(medallionDidTap:) forControlEvents:UIControlEventTouchUpInside];
+//    self.medallionView.userInteractionEnabled = NO;
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(medallionDidTap:)];
+    [self.medallionView addGestureRecognizer:tapGestureRecognizer];
 }
 
 - (void)viewDidUnload
@@ -85,7 +87,6 @@
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Tap" message:@"Medallion has been tapped." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
-    [alertView release];
 }
 
 @end
