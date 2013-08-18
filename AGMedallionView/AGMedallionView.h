@@ -20,5 +20,6 @@
 @property (nonatomic, strong) UIColor *shadowColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, assign) CGSize shadowOffset UI_APPEARANCE_SELECTOR;
 @property (nonatomic, assign) CGFloat shadowBlur UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *imageFillColor UI_APPEARANCE_SELECTOR;
 
 @end

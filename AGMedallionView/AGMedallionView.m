@@ -30,7 +30,8 @@
     borderWidth = _borderWidth,
     shadowColor = _shadowColor,
     shadowOffset = _shadowOffset,
-    shadowBlur = _shadowBlur;
+    shadowBlur = _shadowBlur,
+    imageFillColor = _imageFillColor;
 
 - (void)setImage:(UIImage *)image
 {
@@ -75,6 +76,15 @@
     if (_shadowBlur != shadowBlur) {
         _shadowBlur = shadowBlur;
         
+        [self setNeedsDisplay];
+    }
+}
+
+- (void)setImageFillColor:(UIColor *)imageFillColor
+{
+    if (_imageFillColor != imageFillColor) {
+        _imageFillColor = imageFillColor;
+    
         [self setNeedsDisplay];
     }
 }
@@ -201,6 +211,11 @@
     CGContextScaleCTM(contextRef, 1.0, -1.0);
     
     CGContextSaveGState(contextRef);
+    
+    if (self.imageFillColor) {
+        CGContextSetFillColorWithColor(contextRef, self.imageFillColor.CGColor);
+        CGContextFillEllipseInRect(contextRef, rect);
+    }
     
     // Draw image
     CGContextDrawImage(contextRef, rect, imageRef);
