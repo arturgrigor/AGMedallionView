@@ -1,3 +1,6 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+[![Twitter](https://img.shields.io/badge/twitter-@arturgrigor-blue.svg?style=flat)](http://twitter.com/arturgrigor)
+
 ## AGMedallionView
 
 AGMedallionView is a picture view control just like the one that Apple is using at the login screen in Mac OS X Lion.
